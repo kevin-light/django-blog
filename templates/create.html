@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block blog_create_box %}
+        {#{{ block.super }} 取父类的block#}
+        <title>{% block title %}创建新帖 | {{ block.super }}{% endblock title %}</title>
+
+<form method="POST" action="">
+{#    <--//action=''默认发送当前url#}
+    {% csrf_token %}
+{{ form.as_p }}
+    <input type="submit" value="提交">
+
+</form>
+
+{% endblock blog_create_box %}
+
